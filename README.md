@@ -1,5 +1,4 @@
 # A-level_frontend
-![Screenshot] (https://ibb.co/rwkhcGW)
 Lecture2
 Var:
 Переменные, объявленные при помощи var, могут иметь как глобальную, так и локальную область видимости.
