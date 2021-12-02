@@ -38,4 +38,10 @@ Lecture 3. (Data Types:Basics)
 
 Lecture 4. (Operators and Type Coercion)
 
+Content:
+1. Operators
+2. Type coercion
+3. 3. Recources
+
+
 
