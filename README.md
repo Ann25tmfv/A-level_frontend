@@ -171,7 +171,9 @@ console.log(typeof str2); // object
 
 **Strings methods**
 1. Case changing
+
   1.1 toLowerCase 
+  
   1.2 toUpperCase
   ```
   const firstName = 'Anna';
@@ -180,21 +182,37 @@ console.log(typeof str2); // object
   console.log (lastName.toUpperCase()); //KYSIL
   ```
 2. Searching substring
+
   2.1 includes 
+  
   2.2 indexOf
+  
   2.3 lastIndexOf
+  
   2.4 startsWith
+  
   2.5 endsWith
+  
   2.6 substring 
+  
   2.7 slice
+  
 3. String Spliting
+
   3.1 split
+  
 4. Strings Replacing
+
   4.1 replace
+  
   4.2 replaceAll
+  
 5. Clearing
+
   5.1 trim
+  
   5.2 trimStart
+  
   5.3 trimEnd
   
 ***NUMBER***
@@ -215,26 +233,44 @@ console.log(typeof num2); // object
 ```
 *Number:*
 1. Number keyWords
-2. Number Corner Cases
+
+3. Number Corner Cases
+
   2.1 isNan
+  
   2.2 isFinite
-3. Number Formating
+  
+4. Number Formating
+
   3.1 toString
+  
   3.2 toFixed
+  
   3.3 parseFloat
+  
   3.4 toLocalString
 
 *Math:*
 1. Math Constants 
+
   1.1 Math.Pi //3.141592653 ...
+  
   1.2 Math.E // 2.7182818284 ...
+  
 2. Math Methods
+
   2.1 Math.round() //выводит круглое число, например 4.5 выведет 5)
+  
   2.2 Math.floor() // выводит круглое число, но в меньшую сторону, например 4.5 выведет 4)
+  
   2.3 Math.pow() // подносит в степень
+  
   2.4 Math.sqrt() // выводит квадратный корень числа
+  
   2.5 Math.min() // находит самое минимальное значение
+  
   2.6 Math.max() // находит максимальное значения
+  
   2.7 Math.random // выводит рандомное число от 0 до 1
 
 
