@@ -723,6 +723,7 @@ function someFunction (){
 someFunction();
 ```
 2) глобальный масштаб (Global Scope)
+```
 var a = 6;
 
 if(true) {
@@ -736,7 +737,7 @@ alert(a); //6
 alert(b); //8
 someFunction();
 alert('Outside function c = ${c}'); // not defined
-
+```
 
 
 
