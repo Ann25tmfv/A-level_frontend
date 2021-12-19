@@ -273,5 +273,486 @@ console.log(typeof num2); // object
   
   2.7 Math.random // выводит рандомное число от 0 до 1
 
+---
+# *Lecture 6 (Objects)*
+
+*Object creation*
+
+1. 
+```
+{
+key1: value1,
+key2: value2,
+key3: () => {}.
+...
+}
+//key1,key2,key3 - object properties
+// value1, value2 - properties values
+```
+2. 
+```
+const car = {
+name: 'Audi',
+model: 's8',
+year: 2020,
+isNew: true,
+
+getShortInformation: Function () {
+return `${this.mark}${this.model}, ${this.year}`;
+}
+
+this. - ключевое словоБ которое указывает на какой именно обьектю
+
+```
+
+*Object using*
+
+- objectVariable.propertyName
+```
+let objectPropertyName = 'model';
+console.log(car[objectPropertyName]);
+```
+- objectVariable.methodName()
+- delete properties
+```
+delete car.color;
+delete car.getShortInformation;
+```
+- copy objects
+```
+let obj1 = {
+  value1: 1,
+  value2: 2
+};
+
+let obj2 = obj1;
+obj2.value2 = 3;
+```
+
+*Object property descriptiors*
+
+**Имеет такие свойства:**
+- configurable (указывает может ли быть изменено значения дескриптора и может ли свойство быть удалено из обьекта)
+- enumerable (логическое значение, если равно false, то свойство будет пропущено при перечеслении всех свойств обьекта)
+- value (задает значения свойства)
+- writable (логическое значение, указывает, может ли значения свойства быть изменено операцией присваивания)
+- get (функция возращаемое значение которой будет возвращено в качестве значения свойства при его чтении)
+- set ( функцияБ которая вызывается в момент присваивания свойству нового значения и единственным параметром принимает присваемое значение)
+
+*Descriptors Methods*
+
+1) Object.getOwnPropertyDescriptor()
+```
+const user = {};
+user.name = 'Alex';
+
+console.log(Object.getOwnPropertyDescriptor(user, 'name'));
+```
+2) Object.defineProperty()
+
+```
+let obj {};
+
+Object.defineProperty(obj, 'city', {
+   configurable: false,
+   value: 'Kyiv'
+});
+
+obj.city = 'Odessa'; //ignore
+
+delete obj.city; //ignore
+
+Object.defineProperty(obj, 'city', {
+ configurable: true
+});
+
+```
+
+*Descriptors types*
+- accessors ( access descriptors)
+- data descriptors
+
+
+---
+# *Lecture 7 (Arrays)*
+
+``` 
+const numbers = [1,2,3,4,5]
+```
+
+**Array's length**
+
+```
+const arr = [25, 'cat', true, {domain: 'gogle.com'}];
+console.log(arr.length); //4
+```
+**Arrays using**
+1) array[index]
+```
+let products = ['Milk', 'Meat', 'Apples']
+
+console.log(products[2]); //Apples
+```
+2) changing arrays 
+```
+let cities = ['Minsk', 'Prague', 'Lisbon'];
+
+cities[0] = 'Kyiv';
+cities[3] = 'Tallinn';
+
+console.log(cities); // ['Kyiv', 'Prague', 'Lisbon', 'Tallinn']
+```
+**Arrays Methods**
+
+1) tostring() - массив переделывает в строку;
+2) join() -  позволяет добавить запятые, точки и т.д.
+```
+let arr = [1, 'Anna', true];
+console.log(arr.toString()); // "1,Anna,true"
+console.log(arr.join('.'); //"1.Anna.true"
+```
+3) ushift() - позволяет добавить индекс в начале
+4) push() - позволяет добавить индекс в конце
+5) shift()
+6) pop()
+```
+let arr = [1, 2, 3, 4];
+let arr2 = [3, 4, 5];
+
+console.log(arr.shift());
+console.log(arr.pop());
+
+```
+7) concat() or spread operatror (...)
+```
+console.log([...arr, ...arr2]);
+```
+8) slice()
+```
+let arr1 = [1,2,3,4,5];
+
+let part1_of_arr1 = arr.slice(3); // [4,5]
+```
+9) splice()
+```
+let arr = ['a','b','c','d','e'];
+
+let deleteItems = arr.splice(1,2); // ['b','c']
+console.log(arr); // ['a', 'd','e'];
+
+```
+10) includes()
+```
+let arr = [3,5,19,1,7,23,14,9,7];
+
+console.log(arr.includes(7)); //true
+console.log(arr.includes(77)); //false
+```
+11) indexOf()
+```
+let arr = [3,5,19,1,7,23,14,9,7];
+
+console.log(arr.indexOf(7)); //4
+console.log(arr.indexOf(77)); //-1
+
+```
+12) find()]
+```
+let arr = [7,6,3,5, 8, 2]
+
+let result1 = arr.find((element, index) => element % 4 == 0); //8
+```
+13) some()
+```
+let arr = [7,6,3,5, 8, 2]
+
+let result1 = arr.some((element, index) => element % 4 == 0); //true
+```
+14) every()
+```
+let arr = [7,6,3,5, 8, 2]
+
+let result1 = arr.every((element, index) => element % 4 == 0); //false
+```
+15) sort() - позволяет сортировать массив;
+
+***Arrays Methods***
+
+1) forEach()
+```
+const arr = ['Joe','Anna','Bond'];
+function printf(element, index) {
+    console.log(`a:${element},b:${index}`);
+}
+arr.forEach(printf);
+//or
+arr.forEach((element, index) => console.log(`element:${element},index:${index}`));
+```
+2) map()
+```
+const arr = ['Joe','Anna','Bond'];
+const result = arr.map((element,index) => ({name:element, id: index}));
+console.log(result);
+```
+3) filter()
+```
+const arr = [
+    {
+        name:'Joe',
+        id: 0.435443451,
+        isStudent:true
+    },
+    {
+        name:'Anna',
+        id: 0.476466337,
+        isStudent:true
+    },
+    {
+        name:'Brad',
+        id: 0.9876663,
+        isStudent:false,
+        age: 99
+    }
+];
+const students = arr.filter(element => element.isStudent);
+console.log(students);
+```
+4) reduce()
+```
+const arr =[1,2,3];
+arr.forEach((el) => (sum += el));
+const sumWithReduce = arr.reduce((acc, element,index) => {
+    console.log('acc:', acc);
+    console.log('element:' element);
+
+    return (acc += element);
+},0);
+console.log(sumWithReduce);
+```
+---
+# *Lecture 8 (Functions)*
+
+Мы используем функции для:
+- повторного использования кода;
+- организации своего кода;
+
+**1. Functions Creating**
+```
+function function_name(argument_1, argument_2, ..., argument_N){
+   function's body
+}
+```
+*Functions Using*
+```
+function sum(a,b){
+ return a + b;
+}
+console.log(sum92,3)); //5
+```
+*Function Hoisting*
+```
+printMessage('JavaScript Functions');
+
+function printMessage(message){
+  allert(message);
+}
+```
+*Functions as Arguments*
+```
+const numbers = [1,2,3,4,5];
+
+function multiplyByTwo(element){
+  return element*2;
+}
+
+const newArray = numbers.map(multiplyByTwo);
+```
+*Anonymous Function*
+```
+const numbers = [1,2,3,4,5];
+
+const newArray = numbers.map(function(element){
+   return element*2;
+}};
+```
+**2. Arguments**
+
+```
+function multiply(a,b){
+   return a*b;
+}
+
+multiply(3,9); //27
+```
+*Missing Arguments*
+```
+function multiply(a, b){
+    console.log('a = ${a}');
+    console.log('b = ${b}');
+    
+    return a*b;
+}
+multiply(3): //NaN
+```
+*Default Arguments*
+```
+function multiply(a, b = 1){
+     return a * b;
+}
+multiply(3); //3
+```
+*Unknown Arguments*
+```
+function sum(...numbers){
+     return numbers.reduce(function (acc, currentValue) {
+        return currentValue + acc;
+     });
+}
+sum(1,2,3); //6
+sum(1,2,3,4,5); //15
+```
+*Keyword 'arguments'*
+```
+function someFunc1(a, b, c){
+     return *arguments*;
+}
+
+function someFunc2(...params){
+     return *arguments*;
+}
+
+someFunc1('Hello', 1, true) //['Hello',1,true]
+```
+**3. Functions Return**
+```
+function getValue(a){
+     return a;
+)
+
+getValue(3); //3
+```
+*Functions Multiple returns*
+```
+function someFunc(condition){
+   if(condition) return 'Yes';
+  
+   return 'No';
+   
+   console.log{'This line will never run');
+}
+
+console.log(someFunc(true)); // 'Yes'
+console.log(someFunc(false)); // 'No'
+```
+**4. Arrow Function**
+```
+function function_name(argument_1, argument_2, ..., argument_N){
+     function’s body 
+}
+         ||
+         \/
+(argument_1, argument_2, ..., argument_N) => {
+function’s body
+}
+```
+Example:
+```
+let arrowFunc = (a, b) => {
+    return a + b;
+}
+arrowFunc(3, 7); //10
+```
+*Arrow functions without arguments*
+```
+let arrowFunc = () => {
+   allert('This is arrow function in JS');
+};
+arrowFunc();
+```
+*Arrow fuctions with single argument*
+```
+let arrowFunc = a => {
+    return a*2;
+};
+arrowFunc(8); //16
+```
+*Arrow fuctions with inline body*
+```
+let arrowFunc = (a,b) => a + b;
+arrowFunc(2,6); //8
+```
+***Arrow Functions Example***
+```
+const numbers = [1,2,3,4,5];
+
+const newArr = numbers.map(function(element){
+    return element*2;
+});
+
+const newArr2 = numbers.map(element => element*2);
+```
+**5. Execution Context**
+
+*Keyword 'this'*
+
+Мы можем получить контекст с помощью **this** ключевого слова.
+this может относиться к:
+- глобальный контекст;
+- функциональный контекст;
+
+**6. Closures**
+
+1) локальный охват (Local Scope)
+ - блокировать
+ - функциональный
+ ```
+ //document
+ let a=1;
+ alert('document:a = ${a}'); //document: a=5
+ 
+ //condition 
+ if (true) {
+   let a = 5;
+   alert ('if: a = ${a}'); //if: a =5
+   
+//function 
+function someFunction (){
+  let a=3;
+  alert ('function: a = ${a}'); //fuction: a=3
+}
+someFunction();
+```
+2) глобальный масштаб (Global Scope)
+```
+var a = 6;
+
+if(true) {
+  var b = 8;
+}
+function someFunction (){
+  var c = 10;
+  alert ('function: c = ${c}');
+}
+alert(a); //6
+alert(b); //8
+someFunction();
+alert('Outside function c = ${c}'); // not defined
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
