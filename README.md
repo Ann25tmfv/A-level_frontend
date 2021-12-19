@@ -611,6 +611,138 @@ function sum(...numbers){
 sum(1,2,3); //6
 sum(1,2,3,4,5); //15
 ```
+*Keyword 'arguments'*
+```
+function someFunc1(a, b, c){
+     return *arguments*;
+}
+
+function someFunc2(...params){
+     return *arguments*;
+}
+
+someFunc1('Hello', 1, true) //['Hello',1,true]
+```
+**3. Functions Return**
+```
+function getValue(a){
+     return a;
+)
+
+getValue(3); //3
+```
+*Functions Multiple returns*
+```
+function someFunc(condition){
+   if(condition) return 'Yes';
+  
+   return 'No';
+   
+   console.log{'This line will never run');
+}
+
+console.log(someFunc(true)); // 'Yes'
+console.log(someFunc(false)); // 'No'
+```
+**4. Arrow Function**
+```
+function function_name(argument_1, argument_2, ..., argument_N){
+     function’s body 
+}
+         ||
+         \/
+(argument_1, argument_2, ..., argument_N) => {
+function’s body
+}
+```
+Example:
+```
+let arrowFunc = (a, b) => {
+    return a + b;
+}
+arrowFunc(3, 7); //10
+```
+*Arrow functions without arguments*
+```
+let arrowFunc = () => {
+   allert('This is arrow function in JS');
+};
+arrowFunc();
+```
+*Arrow fuctions with single argument*
+```
+let arrowFunc = a => {
+    return a*2;
+};
+arrowFunc(8); //16
+```
+*Arrow fuctions with inline body*
+```
+let arrowFunc = (a,b) => a + b;
+arrowFunc(2,6); //8
+```
+***Arrow Functions Example***
+```
+const numbers = [1,2,3,4,5];
+
+const newArr = numbers.map(function(element){
+    return element*2;
+});
+
+const newArr2 = numbers.map(element => element*2);
+```
+**5. Execution Context**
+*Keyword 'this'*
+
+Мы можем получить контекст с помощью **this** ключевого слова.
+this может относиться к:
+- глобальный контекст;
+- функциональный контекст;
+```
+**6. Closures**
+
+1) локальный охват (Local Scope)
+ - блокировать
+ - функциональный
+ ```
+ //document
+ let a=1;
+ alert('document:a = ${a}'); //document: a=5
+ 
+ //condition 
+ if (true) {
+   let a = 5;
+   alert ('if: a = ${a}'); //if: a =5
+   
+//function 
+function someFunction (){
+  let a=3;
+  alert ('function: a = ${a}'); //fuction: a=3
+}
+someFunction();
+```
+2) глобальный масштаб (Global Scope)
+var a = 6;
+
+if(true) {
+  var b = 8;
+}
+function someFunction (){
+  var c = 10;
+  alert ('function: c = ${c}');
+}
+alert(a); //6
+alert(b); //8
+someFunction();
+alert('Outside function c = ${c}'); // not defined
+
+
+
+
+
+
+
+
 
 
 
