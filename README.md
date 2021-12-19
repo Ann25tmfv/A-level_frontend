@@ -274,7 +274,7 @@ console.log(typeof num2); // object
   2.7 Math.random // выводит рандомное число от 0 до 1
 
 ---
-#*Lecture 6 (Objects)*
+# *Lecture 6 (Objects)*
 
 *Object creation*
 
@@ -374,7 +374,7 @@ Object.defineProperty(obj, 'city', {
 
 
 ---
-#*Lecture 7 (Arrays)*
+# *Lecture 7 (Arrays)*
 
 ``` 
 const numbers = [1,2,3,4,5]
@@ -476,7 +476,7 @@ let result1 = arr.every((element, index) => element % 4 == 0); //false
 ```
 15) sort() - позволяет сортировать массив;
 
-***Arrays Methods* 
+***Arrays Methods***
 
 1) forEach()
 ```
@@ -529,6 +529,92 @@ const sumWithReduce = arr.reduce((acc, element,index) => {
 },0);
 console.log(sumWithReduce);
 ```
+---
+# *Lecture 8 (Functions)*
+
+Мы используем функции для:
+- повторного использования кода;
+- организации своего кода;
+
+**1. Functions Creating**
+```
+function function_name(argument_1, argument_2, ..., argument_N){
+   function's body
+}
+```
+*Functions Using*
+```
+function sum(a,b){
+ return a + b;
+}
+console.log(sum92,3)); //5
+```
+*Function Hoisting*
+```
+printMessage('JavaScript Functions');
+
+function printMessage(message){
+  allert(message);
+}
+```
+*Functions as Arguments*
+```
+const numbers = [1,2,3,4,5];
+
+function multiplyByTwo(element){
+  return element*2;
+}
+
+const newArray = numbers.map(multiplyByTwo);
+```
+*Anonymous Function*
+```
+const numbers = [1,2,3,4,5];
+
+const newArray = numbers.map(function(element){
+   return element*2;
+}};
+```
+**2. Arguments**
+
+```
+function multiply(a,b){
+   return a*b;
+}
+
+multiply(3,9); //27
+```
+*Missing Arguments*
+```
+function multiply(a, b){
+    console.log('a = ${a}');
+    console.log('b = ${b}');
+    
+    return a*b;
+}
+multiply(3): //NaN
+```
+*Default Arguments*
+```
+function multiply(a, b = 1){
+     return a * b;
+}
+multiply(3); //3
+```
+*Unknown Arguments*
+```
+function sum(...numbers){
+     return numbers.reduce(function (acc, currentValue) {
+        return currentValue + acc;
+     });
+}
+sum(1,2,3); //6
+sum(1,2,3,4,5); //15
+```
+
+
+
+
 
 
 
