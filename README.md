@@ -692,13 +692,14 @@ const newArr = numbers.map(function(element){
 const newArr2 = numbers.map(element => element*2);
 ```
 **5. Execution Context**
+
 *Keyword 'this'*
 
 Мы можем получить контекст с помощью **this** ключевого слова.
 this может относиться к:
 - глобальный контекст;
 - функциональный контекст;
-```
+
 **6. Closures**
 
 1) локальный охват (Local Scope)
