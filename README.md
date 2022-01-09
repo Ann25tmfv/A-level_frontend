@@ -739,6 +739,138 @@ someFunction();
 alert('Outside function c = ${c}'); // not defined
 ```
 
+# *Lecture 9 (Conditions & Loops)*
+
+**1.Conditions**
+1. if-else 
+```
+if(condition){
+ some code
+ }
+ ```
+ 2.switch 
+ ```
+ switch (condition){
+    case value1:
+    ...
+    break;
+    case valu2:
+    ...
+    break;
+    default:
+    ...
+}
+```
+3.Ternary Operator 
+```
+condition ? value1 : value2;
+```
+
+**2.Loops**
+
+1. while - работает, когда состояние надежное
+```
+while (condition){
+some code
+}
+```
+2. do...while - то же, что и while, но запускается в первый раз, затем проверяется условие
+```
+do {
+some code
+} while (condition)
+```
+3. for - самый распространенный способ зацикливания
+```
+for (initial data, condition, action after cycle) {
+some code
+}
+```
+4. for...of - взаимодействовать с элементами массива
+```
+for (element of array) {
+some code
+}
+```
+5. for...in - взаимодействовать с свойствами объектов
+```
+for (property in object) {
+some code
+}
+```
+
+# *Lecture 10 (DOM (part 1))*
+
+**Getting elements**
+
+1. GetElementsByTagName() - возвращает коллекцию объектов HTMLElement на основе имени тега
+```
+document.getElementsByTagName('h1');
+```
+2. getElementsByClassName() - возвращает коллекцию объектов HTMLElement на основе имени класса
+```
+document.getElementsByClassName('panel');
+```
+3. getElementById() - возвращает объект HTMLElement с текущим идентификатором (только первым)
+```
+document.getElementById('chat');
+```
+4. querySelector() - возвращает первый объект HTMLElement на основе селекторов CSS
+```
+document.querySelector('h1');
+document.querySelector('.panel');
+document.querySelector('#chat');
+```
+
+**Updating Elements**
+
+*У элемента DOM есть много свойств и методов для работы:*
+1. Element.id - получить идентификатор
+2. Element.classList - работает с классами
+3. Element.attributes - работает с атрибутами
+4. Element.style - работает с стилями
+5. Element.children -  получить дочерние узлы
+6. Element.innerHTML - обновить HTML внутри элемента
+7. Element.textContent - обновить внутренний текстъ
+8. Element.addEventListener() - обрабатывать события
+9. Element.click() - для обработки события щелчка
+10. Element.appendChild() - добавить новый дочерний узел
+
+*Добавить новые элементы:*
+appendChild() - получает новый элемент и добавляет его в текущий элемент.
+insertBefore() - получает 2 аргумента: элемент, который мы хотим добавить, элемент, после которого нужно добавить
+after() - получает новый элемент и добавляет его после текущего элемента.
+
+*Дополнительные свойства HTML-элементов:*
+1. parentNode - прямой родитель;
+2. firstChild - первый прямой дочерний элемент;
+3. lastChild - последний прямой дочерний элемент;
+4. nextSibling - следующий элемент в структуре, находящийся на одном уровне иерархии с текущим элементом;
+5. previousSibling - предыдущий элемент в структуре, находящийся на одном уровне иерархии с текущим элементом.
+
+**Change Atributes**
+
+1. getAttribute() - берет имя attr и получает его значение
+2. setAttribute() - берет имя attr со своим значением и устанавливает его
+3. hasAttribute() - истина или ложь, если attr существует
+4. removeAttribute() - удалить attr
+
+**Removing elements**
+
+1. removeChild() - вызывается применительно к элементу, у которого необходимо удалить прямой дочерний элемент, аргументом принимает удаляемый HTML-тег и возвращает ссылку на него;
+2. remove() - вызывается применительно к элементу, который необходимо удалить из DOM.
+
+
+
+
+
+
+
+
+    
+
+
+
 
 
 
