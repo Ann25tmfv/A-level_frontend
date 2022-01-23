@@ -18,5 +18,8 @@ function joinObjects(obj1, obj2) {
             result[key] = obj2[key];
         }
     }
+
+    return result; // don't forget about return
     }
+
     console.log(joinObjects({name:'Joe'}, {age: 25}));

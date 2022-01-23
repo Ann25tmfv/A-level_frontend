@@ -3,34 +3,22 @@
  */
 
 const user = {
-    name: 'Jack',
-    age: 18,
-    toString: function() {
-        return 'My name is' + this.name + ',' + 'I am' + this.age
-    }
+  name: 'Jack',
+  age: 18
+  // you can't config props/methods that are already set
+  // toString: function() {
+  //     return 'My name is' + this.name + ',' + 'I am' + this.age;
+  // }
 };
 
-Object.defineProperty (user, toString, {
-    enumerable: false
+Object.defineProperty(user, 'toString', {
+  // prop name should be string
+  enumerable: false, // enumerable is 'false' by default
+  value: function () {
+    return 'My name is ' + this.name + ', ' + 'I am ' + this.age;
+  }
 });
 
-for(var key in user) alert(key);
+for (var key in user) console.log(key);
 
-//or
-
-const user = {
-    name: 'Jack',
-    age: 18
-}
-
-Object.defineProperty (user, toString, {
-    get: function() {
-        return 'My name is' + this.name + ',' + 'I am' + this.age;
-    }
-});
-
-Object.defineProperties (user, valueOf, {
-    get: function() {
-        return this.age;
-    }
-});
+console.log('Hello! ' + user); // 'Hello! My name isJack, I am 18'
