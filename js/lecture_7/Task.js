@@ -2,9 +2,15 @@
  * Task 1
  */
 
-const findVowelsCount = inputString => [...inputString].filter(c => 'aeiou'.includes(c.toLowerCase())).length;
+const findVowelsCount = inputString => [...inputString].filter(c => 'aeiou'.includes(c.toLowerCase())).length; // please explain following code with comments step by step 
 
-console.log(findVowelsCount('aaaa'));            
+console.log(findVowelsCount('aaaa'));   
+
+/**
+ * Task 2
+ */
+
+// ???
 
 /**
  * Task 3
