@@ -1,4 +1,8 @@
-
+**Content:**
+1. [Lecture 2](#lecture-2)
+2. [Lecture 3](#lecture-3-data-typesbasics)
+3. [Lecture 4](#lecture-4-operators-&-type-coercion)
+4. ...
 # *Lecture 2*
 
 **Var:**
@@ -60,7 +64,7 @@
 
 **Arithmetic Operators:**
 1. +, -, *, /
-```
+```js
 const a = 3 + 5;
 const b = 4 - 3;
 const c = 2 * 2;
@@ -73,12 +77,12 @@ const d = 3 * 3;
 
 **Assignment operators :**
 1. Assignment (=)
-```
+```js
 let a = 1;
 let b = a + a;
 ```
 2. Addition (+=)
-```
+```js
 let a = 1;
 a += 5; // a = 6;
 ```
@@ -93,32 +97,32 @@ a += 5; // a = 6;
 
 **Comparison Operators**
 1. (==)
-```
+```js
 3 == 3; //true
 1 == 3; //false
 ```
 2. (!=)
-```
+```js
 3 != 3; //false
 1 != 3; //true
 ```
 3. (===)
-```
+```js
 3 === 3; // true
 3 === '3'; //false. operand 1 is number, operand 2 - string
 ```
 4. (!==)
-```
+```js
 3 !== 3; // false
 3 !== '3'; // true
 ```
 5. (>,<) 
-```
+```js
 3 < 5; // true
 4 > 7; //false
 ```
 6. (>=, <=)
-```
+```js
 5 <= 5; //true
 6 >= 9; //false
 ```
